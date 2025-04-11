@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChenBestFake - חידות הגיון</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 24px;
+        }
+        main {
+            margin: 20px;
+        }
+        .question {
+            font-size: 20px;
+            margin: 20px;
+        }
+        .answer {
+            font-size: 18px;
+            color: #555;
+        }
+        .question, .answer {
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    ChenBestFake - חידות הגיון
+</header>
+
+<main>
+    <div class="question">
+        <p>מה היה מקצועו של יוחנן הסנדלר?</p>
+        <button onclick="document.getElementById('answer1').style.display = 'block'">גלה תשובה</button>
+        <p id="answer1" class="answer" style="display: none;">היה סנדלר, כמובן!</p>
+    </div>
+
+    <div class="question">
+        <p>איזה חודש יש בו 28 ימים?</p>
+        <button onclick="document.getElementById('answer2').style.display = 'block'">גלה תשובה</button>
+        <p id="answer2" class="answer" style="display: none;">כל החודשים יש בהם 28 ימים!</p>
+    </div>
+</main>
+
+<footer>
+    אתר חינמי בעזרת HTML ו-CSS
+</footer>
+
+</body>
+</html>
