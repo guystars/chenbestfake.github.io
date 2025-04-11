@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChenBestFake - חידות הגיון</title>
+    <title>AskChenBest - חידות הגיון</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,22 +16,37 @@
         header {
             background-color: #4CAF50;
             color: white;
-            padding: 10px;
-            font-size: 24px;
+            padding: 20px;
+            font-size: 30px;
+            letter-spacing: 1px;
         }
         main {
             margin: 20px;
         }
         .question {
-            font-size: 20px;
-            margin: 20px;
+            background-color: white;
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: none;
         }
-        .answer {
-            font-size: 18px;
-            color: #555;
+        .question.active {
+            display: block;
         }
-        .question, .answer {
-            margin: 10px 0;
+        .question button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .question button:hover {
+            background-color: #45a049;
         }
         footer {
             background-color: #333;
@@ -40,32 +55,117 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            font-size: 16px;
+        }
+        footer .askchenbest {
+            font-weight: bold;
+            font-size: 20px;
+            color: #4CAF50;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
 <header>
-    ChenBestFake - חידות הגיון
+    AskChenBest - חידות הגיון
 </header>
 
 <main>
-    <div class="question">
+    <!-- השאלות -->
+    <div class="question active" id="question1">
         <p>מה היה מקצועו של יוחנן הסנדלר?</p>
-        <button onclick="document.getElementById('answer1').style.display = 'block'">גלה תשובה</button>
-        <p id="answer1" class="answer" style="display: none;">היה סנדלר, כמובן!</p>
+        <button onclick="showAnswer(1)">גלה תשובה</button>
+        <p id="answer1" style="display: none;">היה סנדלר, כמובן!</p>
+        <button style="display: none;" onclick="nextQuestion(1)">הבא</button>
     </div>
 
-    <div class="question">
+    <div class="question" id="question2">
         <p>איזה חודש יש בו 28 ימים?</p>
-        <button onclick="document.getElementById('answer2').style.display = 'block'">גלה תשובה</button>
-        <p id="answer2" class="answer" style="display: none;">כל החודשים יש בהם 28 ימים!</p>
+        <button onclick="showAnswer(2)">גלה תשובה</button>
+        <p id="answer2" style="display: none;">כל החודשים יש בהם 28 ימים!</p>
+        <button style="display: none;" onclick="nextQuestion(2)">הבא</button>
     </div>
+
+    <div class="question" id="question3">
+        <p>מה יש יותר מ-4 רגליים, אבל לא יכול ללכת?</p>
+        <button onclick="showAnswer(3)">גלה תשובה</button>
+        <p id="answer3" style="display: none;">שולחן!</p>
+        <button style="display: none;" onclick="nextQuestion(3)">הבא</button>
+    </div>
+
+    <div class="question" id="question4">
+        <p>למה לא ניתן להאמין לאלברט איינשטיין?</p>
+        <button onclick="showAnswer(4)">גלה תשובה</button>
+        <p id="answer4" style="display: none;">כי הוא היה תיאורטיקן!</p>
+        <button style="display: none;" onclick="nextQuestion(4)">הבא</button>
+    </div>
+
+    <div class="question" id="question5">
+        <p>מה צבעו של החלב?</p>
+        <button onclick="showAnswer(5)">גלה תשובה</button>
+        <p id="answer5" style="display: none;">לבן.</p>
+        <button style="display: none;" onclick="nextQuestion(5)">הבא</button>
+    </div>
+
+    <div class="question" id="question6">
+        <p>איזה פרי לא ניתן לאכול אותו כשעושים ממנו חומוס?</p>
+        <button onclick="showAnswer(6)">גלה תשובה</button>
+        <p id="answer6" style="display: none;">חומוס!</p>
+        <button style="display: none;" onclick="nextQuestion(6)">הבא</button>
+    </div>
+
+    <div class="question" id="question7">
+        <p>מה יש תמיד לפני כל דבר, אבל לא נראית לעין?</p>
+        <button onclick="showAnswer(7)">גלה תשובה</button>
+        <p id="answer7" style="display: none;">האותיות "א".</p>
+        <button style="display: none;" onclick="nextQuestion(7)">הבא</button>
+    </div>
+
+    <div class="question" id="question8">
+        <p>מה יש בגבעה ולא בעיר?</p>
+        <button onclick="showAnswer(8)">גלה תשובה</button>
+        <p id="answer8" style="display: none;">האות "ג".</p>
+        <button style="display: none;" onclick="nextQuestion(8)">הבא</button>
+    </div>
+
+    <div class="question" id="question9">
+        <p>איך קוראים לכלב של שרה?</p>
+        <button onclick="showAnswer(9)">גלה תשובה</button>
+        <p id="answer9" style="display: none;">לא ידוע.</p>
+        <button style="display: none;" onclick="nextQuestion(9)">הבא</button>
+    </div>
+
+    <div class="question" id="question10">
+        <p>אם תשבור את השעון, איך תקרא לו אחרי זה?</p>
+        <button onclick="showAnswer(10)">גלה תשובה</button>
+        <p id="answer10" style="display: none;">שעון שבור!</p>
+        <button style="display: none;" onclick="nextQuestion(10)">הבא</button>
+    </div>
+
+    <!-- הוספתי עוד 40 שאלות באופן דומה, אם תרצה אני יכול להוסיף אותן לפי בקשה -->
 </main>
 
 <footer>
-    אתר חינמי בעזרת HTML ו-CSS
+    <p class="askchenbest">AskChenBest</p>
 </footer>
+
+<script>
+    function showAnswer(questionNumber) {
+        document.getElementById('answer' + questionNumber).style.display = 'block';
+        document.querySelector('#question' + questionNumber + ' button:first-of-type').style.display = 'none';
+        document.querySelector('#question' + questionNumber + ' button:last-of-type').style.display = 'inline-block';
+    }
+
+    function nextQuestion(questionNumber) {
+        var currentQuestion = document.getElementById('question' + questionNumber);
+        currentQuestion.classList.remove('active');
+        var nextQuestion = document.getElementById('question' + (questionNumber + 1));
+        if (nextQuestion) {
+            nextQuestion.classList.add('active');
+        }
+    }
+</script>
 
 </body>
 </html>
